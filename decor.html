@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>SHOP DECOR - XTREME ILLUSION</title> <style> 
+        /* CSS k comments*/
+        body { background-color: #050505; color: #D4AF37; text-align: center; font-family: serif; padding: 50px; } /*screen ko dark aur gold theme di */
+        
+        .product-card { 
+            border: 1px solid #D4AF37; /* Decor box ki boundary gold kar di */
+            padding: 20px;               /* Box ke andar ka jo faasla */
+            width: 240px;                /* Box k width  */
+            display: inline-block;       /* Boxes ko ek hi line mein leaya */
+            margin: 15px;                /* Do boxes ke darmyaan space */
+            cursor: pointer;             /* Cursor dikhaane k lye  */
+            background-color: #0a0a0a;   /* Box ka black rang */
+            vertical-align: top;         /* Boxes ko upar se barabar rakhne ke liye */
+        }
+
+        .product-card:hover { background: rgba(212, 175, 55, 0.1); } /* Mouse upar laane par box chamke ga balley balley karega */
+
+        .product-img {
+            width: 100%;                 /* Photo ko box ki poori width di*/
+            height: 250px;               /* Photo ki height */
+            object-fit: cover;           /* Tasweer taa k khiche nai (doesnt get weird stretch wala vibe) */
+            margin-bottom: 15px;         /* Photo aur text ke beech gap rakhne*/
+            border: 1px solid #333;      /* 4 taraf photo k border */
+        }
+    </style> 
+
+    <script> 
+        function add_to_bag(item_name, item_price) { // Item add function
+            var current_bag = JSON.parse(localStorage.getItem('my_boutique_cart')) || []; // Purana cart check kiya ya naya banaya and '[]' means that cart is khaali so either aik item hoga ya phr cart khaali hoga ye condition use kia wa ha me ne
+            current_bag.push({ name: item_name, price: item_price }); // Naya item list mein daala
+            localStorage.setItem('my_boutique_cart', JSON.stringify(current_bag)); // Cart ko browser ki memory mein save kiya
+            alert(item_name + " added to bag!"); // Customer ko message dikhaadia
+        }
+    </script> 
+</head> 
+
+<body> 
+    <h1 style="letter-spacing: 10px;">DECOR COLLECTION</h1> 
+    <div class="product-card" onclick="add_to_bag('Floral Motif Vase', 3999)"> 
+        <img src="allec-gomes-CXkiDgafi_c-unsplash.jpg" class="product-img"> 
+        <h3>FLORAL MOTIF VASE</h3> 
+        <p>PKR 3999</p> 
+    </div> 
+    <div class="product-card" onclick="add_to_bag('Cube Pendant Lights', 8499)"> 
+        <img src="bui-hoang-long-3Xo5Cxg7nTA-unsplash.jpg" class="product-img"> 
+        <h3>CUBE PENDANT LIGHTS</h3> 
+        <p>PKR 8499</p>
+     </div> 
+     <div class="product-card" onclick="add_to_bag('Onyx Scented Candle', 1399)"> 
+        <img src="content-pixie-yMAomXUPahU-unsplash.jpg" class="product-img"> 
+        <h3>ONYX SCENTED CANDLE</h3> 
+        <p>PKR 1399</p> 
+    </div>
+     <br><br> <button onclick="location.href='checkout.html'" style="background:gold; color:black; padding:15px 40px; cursor:pointer; font-weight:bold; border:none; letter-spacing:2px;">
+        VIEW MY CART </button> <!-- ye wohi 3 products jo decor mein display honge with name, price and then aage un k imgsrc (file location)-->
+
+    <br><br> <button onclick="location.href='explore.html'" style="color:#D4AF37; background:none; border:none; cursor:pointer; text-decoration:underline;">
+        Back to Explore </button>
+
+</body> 
+</html>

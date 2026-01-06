@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHOP - XTREME ILLUSION</title> <style>
+        
+        body { background-color: #050505; color: #D4AF37; text-align: center; font-family: serif; padding: 50px; } /* Luxury black background aur gold text */
+        
+        .product-card { 
+            border: 1px solid #D4AF37; /* Makeup box gold boundary*/
+            padding: 20px;               /* Box ke andar khali jagah */
+            width: 240px;                /* Box width */
+            display: inline-block;       /* Boxes ko ek doosre ke sath fit krdiya (jese doosre webpages mein kiye same cheez ha)*/
+            margin: 15px;                /* Boxes k beech distance */
+            cursor: pointer;             /* Mouse le jane par click wala nishan */
+            background-color: #0a0a0a;   /* Box black color */
+            vertical-align: top;         /* Boxes ko upar se align krdia*/
+        }
+
+        .product-card:hover { background: rgba(212, 175, 55, 0.1); } /* Mouse upar aane par box chamke ga (hover effect jisko bolenge)*/
+
+        .product-img {
+            width: 100%;                 /* Photo ko box k width k lihaaz se adjust krdia*/
+            height: 250px;               /* Photo ki height */
+            object-fit: cover;           /* Photo ko khichne se (stretchy effect) se yk bachay*/
+            margin-bottom: 15px;         /* Photo aur naam ke beech gap */
+            border: 1px solid #333;      /* 4 taraf black border */
+        }
+    </style>
+
+    <script>
+        function add_to_bag(item_name, item_price) { // Saman cart mein daalne wala logic
+            var current_bag = JSON.parse(localStorage.getItem('my_boutique_cart')) || []; // JSON.parse us purane text ko dubara se ek Asli List mein badal deta hai taake hum usmein naye items bhi daal sakein. Ismein purani shopping list check ki k agar khaali ha ya phr kuch saman waghera para ha ya nahi cart mein
+            current_bag.push({ name: item_name, price: item_price }); // Naya makeup item list mein daaldia. ismein push ka matlab poochlena mere se aise samajh nai ayga ill explain ye logic sir ko dikhaadena
+            localStorage.setItem('my_boutique_cart', JSON.stringify(current_bag)); // List ko browser memory mein save kiya
+            alert(item_name + " added to bag!"); // Message dikhaya ke item add ho gaya
+        }
+    </script>
+</head>
+<body>
+
+    <h1 style="letter-spacing: 10px;">COSMETICS COLLECTION</h1> 
+    <div class="product-card" onclick="add_to_bag('Coco Noir Perfume', 5899)"> 
+        <img src="pexels-laurachouette-21926653.jpg" class="product-img"> 
+        <h3>COCO NOIR PERFUME</h3>
+         <p>PKR 5899</p>
+         </div> 
+         <div class="product-card" onclick="add_to_bag('Luxury Lipstick', 1349)"> 
+            <img src="pexels-776549866-18976785.jpg" class="product-img"> 
+            <h3>LUXURY LIPSTICK</h3> 
+            <p>PKR 1349</p> 
+        </div> <div class="product-card" onclick="add_to_bag('Eyeshadow Palette', 2199)"> 
+            <img src="pexels-karola-g-4889720.jpg" class="product-img"> 
+            <h3>EYESHADOW PALETTE</h3> 
+            <p>PKR 2199</p> 
+        </div> 
+        <br><br> <button onclick="location.href='checkout.html'" style="background:gold; color:black; padding:15px 40px; cursor:pointer; font-weight:bold; border:none; letter-spacing:2px;">
+        VIEW MY CART </button>
+
+    <br><br> <button onclick="location.href='explore.html'" style="color:#D4AF37; background:none; border:none; cursor:pointer; text-decoration:underline;">
+        Back to Explore </button>
+
+</body>
+</html>

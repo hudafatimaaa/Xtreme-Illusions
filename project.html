@@ -1,0 +1,150 @@
+<!DOCTYPE html> <!-- ye document type ha har html document k shuroo me likhna laazmi hota ha-->
+<html> 
+<head> 
+<title>XTREME ILLUSION - LUXURY</title> 
+    <style> 
+    /* Yahan se css shuru hota hai (css ki alag file bhi bansktithi but asaani k lye andar hi banadia warna khwaari hoti) */
+
+        body { 
+            background-color: black; /* Website background black kar diya */
+            color: gold;           /* Text color gold kar diya */
+            font-family: "Times New Roman"; /*font style set kiya */
+            text-align: center;       /* Sab center mein rakha */
+        }
+
+        h1 { 
+            font-size: 65px;          /* Title ka size bada krne k lye (apne hisaab se size change bhi krskte ho)*/
+            letter-spacing: 12px;     /* Letters ke darmyan space */
+            margin-top: 100px;        /* Title ko thora neeche kiya taake bht upar na ho header k saath bilkul*/
+        }
+
+        .reward-box {  /*Ye 'class' ha jahan p tumhara discount code (reward) k box ka sab bataya wa ha */
+            border: 4px double gold; /* Double line gold border daaldia aur ye #D4AF37 jo ha ye color ka hexadecimal code hota ha*/
+            padding: 40px;            /* Box k andar space */
+            width: 450px;             /* Box k width */
+            margin: 50px auto;        /* Box ko page center mein karne k lye 50 px kia  */
+            background-color: #0a0a0a; /* Box ka color black */
+        }
+
+        .email-input { /* Ab ye email k input ki class ha jo batayga k email jab user input karega to kia kia hoga aur kese dikhega sab*/
+            background: transparent;  /* Colout transparent aur khaali line dikhegi */
+            border: none;             /* Pichle borders khatam */
+            border-bottom: 2px solid #D4AF37; /* Sirf neeche wali gold line rakha */
+            color: white;             /* Typing color white rakha ha jo user type krega*/
+            padding: 10px;            /* Box k andar space */
+            width: 250px;             /* Typing box width */
+            text-align: center;       /* Text center mein likha jayega */
+            margin-bottom: 20px;      /* Neeche se space dedia thora sa */
+            outline: none;            /* Click karne par black line na aaye */
+        }
+
+        .gold-btn { 
+            background: transparent;  /* Button ka rang nahi hoga transparent rakha */
+            color: #D4AF37;           /* Button text gold */
+            border: 1px solid #D4AF37; /* Button gold border */
+            padding: 15px 40px;       /* Button ka size big kiya */
+            cursor: pointer;          /* Mouse le jaane par nishana aayga */
+            letter-spacing: 2px;      /* Button text meinspace */
+            text-transform: uppercase; /* Sare letters caps mein rakhdiye matlab bare krdiye */
+        }
+
+        .gold-btn:hover { /*ye golden button k class ha jis mein button p lekar jaoge to hover effect dega*/
+            background: #D4AF37;      /* Mouse le jane par button gold ho jayga */
+            color: #000000;           /* Txt black */
+        }
+
+        footer { 
+            margin-top: 100px;        /* Footer ko neeche kardia thora */
+            border-top: 1px solid #333; /* Upar ek halki si line lagadi */
+            padding: 60px;            /* Footer ki height set ki */
+            background-color: #000;   /* Footer black colour ka kardia*/
+        }
+
+    </style> 
+   <script> 
+    /* asal cheez jo operations hoti hain website k and functions wo sab script k andar kia jaata ha isko basically website ka dimagh bola jaata ha jahan sab kuch hota ha*/
+
+        function get_my_reward() { 
+            // Ye function tab chale ga jab koi button dabay ga
+
+            var text_entered = document.getElementById("my_email").value; 
+            // Is ne input box se user ki email utha kar 'text_entered' mein save kar dia
+
+            if (text_entered.includes("@")) { 
+                // Check kiya ke kya email mein '@' hai ya nahi
+                alert("WELCOME TO LUXURY!\nYour Code is: LAIBAXTREME30"); 
+            } 
+            else { 
+                // Agar @ nahi hai to ye wala error message display hoga 
+                alert("That is not a valid email address!"); 
+            } 
+            
+        } 
+
+    </script>
+    </head> 
+<body> 
+<h1>XTREME ILLUSION</h1>  
+    <div class="reward-box">    <!--div aik khali box ki tarah hoti ha aur ye jo class likha wa ha us box ko aik pehchaan dene ke liye use ki wi ha-->
+    <h3>PRIVATE ACCESS</h3>     
+        <p>Enter email for 30% off your first order.</p> 
+        <input type="text" id="my_email" class="email-input" placeholder="Enter Email"> 
+        <br> 
+        <button class="gold-btn" onclick="get_my_reward()">REDEEM GIFT</button> 
+        </div> 
+    <button class="gold-btn" onclick="location.href='explore.html'">EXPLORE SHOP</button>  <!--ye jo location.href likha wa ha it means k ye button explore.html k webpage par lekar jayga-->
+    <footer> 
+    <p>Naval Anchorage Commercial 2, Islamabad</p> <!-- ye aunty k shop details hain-->
+        <p>03212153758</p> 
+        <p>@xtreme_illusion9</p> 
+        </footer> 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EXPLORE - XTREME ILLUSION</title> <style>
+        body { background-color: #050505; color: #D4AF37; text-align: center; font-family: serif; margin: 0; } /* Poora screen ka background black and text theme gold */
+        
+        .nav-card {
+            display: inline-block;                      /* Boxes ko ek doosre ke barabar krdia */
+            border: 1px solid rgba(212, 175, 55, 0.4);  /* Box gold border  */
+            padding: 60px 20px;                         /* Box ke andar upar neeche space dedi */
+            width: 250px;                               /* Box width*/
+            margin: 20px;                               /* Boxes k darmiyan faasla rakhlia */
+            text-decoration: none;                      /* Link k neechay wali line khatam ki */
+            color: #D4AF37;                             /* Likhai ka rang gold rakha */
+            background-color: rgba(255, 255, 255, 0.02);/* Box ka background halka sa chamkaadia (wohi hover efect) */
+            transition: 0.4s;                           /* Smooth krdia animation ko*/
+        }
+
+        .nav-card:hover {
+            border: 1px solid #D4AF37;                  /* Mouse upar aane par border gold ho jaye ga */
+            background-color: rgba(212, 175, 55, 0.1);  /* Mouse laane par gold rang bhar jaye ga */
+            transform: translateY(-10px);               /* Mouse laane par box thora upar uthe ga (hover effect sort of)*/
+        }
+
+        footer { margin-top: 100px; border-top: 1px solid #333; padding: 60px; background-color: #000; } /* Footer ka style set*/
+    </style>
+</head>
+<body>
+    <h1 style="margin-top: 80px; letter-spacing: 15px;">COLLECTIONS</h1> 
+    <div style="margin-top: 50px;"> 
+        <a href="jewelery.html" class="nav-card">
+            <h2>JEWELRY</h2>
+        </a> <a href="cosmetics.html" class="nav-card">
+            <h2>COSMETICS</h2>
+        </a> <a href="decor.html" class="nav-card">
+            <h2>DECOR</h2></a> 
+        </div>
+
+    <button onclick="location.href='index.html'" style="background:none; color:#D4AF37; border:1px solid #D4AF37; padding:15px 40px; cursor:pointer; margin-top: 50px;">BACK TO HOME</button> 
+    <footer> 
+        <div style="max-width: 500px; margin: 0 auto; border: 1px solid rgba(212, 175, 55, 0.3); padding: 40px;">
+             <p>
+                <b>Naval Anchorage Commercial 2, Islamabad</b>
+            </p> <p>03212153758</p> 
+            <a href="https://www.instagram.com/xtreme_illusion9" target="_blank" style="color: #D4AF37; text-decoration: none;">FOLLOW @xtreme_illusion9</a> 
+            </div>
+    </footer>
+</body>
+</html>

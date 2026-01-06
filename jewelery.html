@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHOP - XTREME ILLUSION</title>
+    <style>
+        /* style (css) me comments lagane k lye */ /* use hota ha and html me  <!-- --> */
+        body { background-color: #050505; color: #D4AF37; text-align: center; font-family: serif; padding: 50px; } /* Poori screen ka rang aur font set kiya */
+        
+        .product-card { 
+            border: 1px solid #D4AF37;  /* Box k border gold */
+            padding: 20px;               /* Box k andar jagah chhordi thori */
+            width: 240px;                /* Box k width */
+            display: inline-block;       /* Boxes ko aik doosre ke barabar mein laane k lye inline-block use kia ha me ne*/
+            margin: 15px;                /* Do boxes k darmiyan distance rakha taa k seperate lage aur neat lage */
+            cursor: pointer;             /* Mouse le jaane par pointer banay ga */
+            background-color: #0a0a0a;   /* Box k inside colour black rakha ha to match theme*/
+            vertical-align: top;         /* Boxes ko upar se barabar krdia align kr k */
+        }
+
+        .product-card:hover { background: rgba(212, 175, 55, 0.1); } /* Mouse jab ayga upar to wo hover effect laane k lye thora colour waghera effect dedia */
+
+        .product-img {
+            width: 100%;                 /* Photo k width box k barabar rakhi */
+            height: 250px;               /* Photo ki lambai fix kar di */
+            object-fit: cover;           /* Photo jo daali hain usko humne aik box me fit krdia */
+            margin-bottom: 15px;         /* Photo aur naam ke beech space rakhdia neatness k lye */
+            border: 1px solid #333;      /* Photo ke 4 taraf border lagadia luxury look dene  k lye yk */
+        }
+    </style>
+
+    <script>
+        // main cheezein idhr hongi and script k lye aap '//' symbol use karte hain
+        function add_to_bag(item_name, item_price) { //  function cart mein cheezain daalne ke liye banaya ha
+            var current_bag = JSON.parse(localStorage.getItem('my_boutique_cart')) || []; // shopping list check ki either cart khaali hoga ya kuch na kuch hoga cart mein ye condition ha is mein 
+            current_bag.push({ name: item_name, price: item_price }); // Naya item list mein shaamil krdia
+            localStorage.setItem('my_boutique_cart', JSON.stringify(current_bag)); // new list jo ha wo broswer mein hi save krdia 
+            alert(item_name + " added to bag!"); // User ko message display hoga screen me k item added to bag
+        }
+    </script>
+</head>
+<body>
+
+
+    <h1 style="letter-spacing: 10px;">JEWELRY COLLECTION</h1> 
+    <div class="product-card" onclick="add_to_bag('Snake Gold Ring', 2399)">
+         <img src="pexels-coppertist-wu-313365563-15727983.jpg" class="product-img"> 
+         <h3>SNAKE GOLD RING</h3>
+          <p>PKR 2399</p> 
+        </div> <div class="product-card" onclick="add_to_bag('Diamond Pendant', 2699)"> 
+            <img src="pexels-chris-f-38966-9280250.jpg" class="product-img"> 
+            <h3>DIAMOND PENDANT</h3>
+             <p>PKR 2699</p> 
+            </div> 
+            <div class="product-card" onclick="add_to_bag('Chain Bracelet', 1949)"> 
+                <img src="pexels-lauraoliveira-34444203.jpg" class="product-img"> 
+                <h3>CHAIN BRACELET</h3> 
+                <p>PKR 1949</p>
+             </div> 
+             
+             <br><br> <button onclick="location.href='checkout.html'" style="background:gold; color:black; padding:15px 40px; cursor:pointer; font-weight:bold; border:none; letter-spacing:2px;">
+        VIEW MY CART </button>
+
+<!--ye jo upar line ha is me saare products k name, pricing and image k location jo folder me ha (img src) wo dia wa ha-->
+
+   <!--br means break aur it makes the text go to next line (jese ap enter dabate ho to wo next line p chalajata ha na wese hi)--> 
+   <br><br> <button onclick="location.href='explore.html'" style="color:#D4AF37; background:none; border:none; cursor:pointer; text-decoration:underline;">
+        Back to Explore </button>
+
+</body>
+</html>

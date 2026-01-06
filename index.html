@@ -1,0 +1,104 @@
+<!DOCTYPE html> <!-- ye document type ha har html document k shuroo me likhna laazmi hota ha-->
+<html> 
+<head> 
+<title>XTREME ILLUSION - LUXURY</title> 
+    <style> 
+    /* Yahan se css shuru hota hai (css ki alag file bhi bansktithi but asaani k lye andar hi banadia warna khwaari hoti) */
+
+        body { 
+            background-color: #050505; /* Website background black kar diya */
+            color: #D4AF37;           /* Text color gold kar diya */
+            font-family: "Times New Roman", serif; /*font style set kiya */
+            text-align: center;       /* Sab center mein rakha */
+            margin: 0;                /* Extra space khatam*/
+        }
+
+        h1 { 
+            font-size: 60px;          /* Title ka size bada krne k lye (apne hisaab se size change bhi krskte ho)*/
+            letter-spacing: 15px;     /* Letters ke darmyan space */
+            margin-top: 100px;        /* Title ko thora neeche kiya taa k bht upar na ho header k saath bilkul*/
+        }
+
+        .reward-box {  /*Ye 'class' ha jahan p tumhara discount code (reward) k box ka sab bataya wa ha */
+            border: 4px double goldenrod; /* Double line gold border daaldia aur ye #D4AF37 jo ha ye color ka hexadecimal code hota ha*/
+            padding: 40px;            /* Box k andar space */
+            width: 450px;             /* Box k width */
+            margin: 50px auto;        /* Box ko page center mein karne k lye 50 px kia  */
+            background-color: black; /* Box ka color black */
+        }
+
+        .email-input { /* Ab ye email k input ki class ha jo batayga k email jab user input karega to kia kia hoga aur kese dikhega sab*/
+            background: transparent;  /* Colout transparent aur khaali line dikhegi */
+            border: none;             /* Pichle borders khatam */
+            border-bottom: 2px solid goldenrod; /* Sirf neeche wali gold line rakha */
+            color: white;             /* Typing color white rakha ha jo user type krega*/
+            padding: 10px;            /* Box k andar space */
+            width: 250px;             /* Typing box width */
+            text-align: center;       /* Text center mein likha jayega */
+            margin-bottom: 20px;      /* Neeche se space dedia thora sa */
+            outline: none;            /* Click karne par black line na aaye */
+        }
+
+        .gold-btn { 
+            background: transparent;  /* Button ka rang nahi hoga transparent rakha */
+            color: #D4AF37;           /* Button text gold */
+            border: 1px solid #D4AF37; /* Button gold border */
+            padding: 15px 40px;       /* Button ka size big kiya */
+            cursor:pointer;         /* Mouse le jaane par nishana aayga */
+            letter-spacing: 2px;      /* Button text meinspace */
+            text-transform: uppercase; /* Sare letters caps mein rakhdiye matlab bare krdiye */
+        }
+
+        .gold-btn:hover { /*ye golden button k class ha jis mein button p lekar jaoge to hover effect dega*/
+            background: #D4AF37;      /* Mouse le jane par button gold ho jayga */
+            color: #000000;           /* Txt black */
+        }
+
+        footer { 
+            margin-top: 100px;        /* Footer ko neeche kardia thora */
+            border-top: 1px solid #333; /* Upar ek halki si line lagadi */
+            padding: 50px;            /* Footer ki height set ki */
+            background-color: #000;   /* Footer black colour ka kardia*/
+        }
+
+    </style> 
+   <script> 
+    /* asal cheez jo operations hoti hain website k and functions wo sab script k andar kia jaata ha isko basically website ka dimagh bola jaata ha jahan sab kuch hota ha*/
+
+        function get_my_reward() { 
+            // Ye function tab chale ga jab koi button dabay ga
+
+            var text_entered = document.getElementById("my_email").value; 
+            // Is ne input box se user ki email utha kar 'text_entered' mein save kar dia
+
+            if (text_entered.includes("@")) { 
+                // Check kiya ke kya email mein '@' hai ya nahi
+                alert("WELCOME TO LUXURY!\nYour Code is: LAIBAXTREME30"); 
+            } 
+            else { 
+                // Agar @ nahi hai to ye wala error message display hoga 
+                alert("That is not a valid email address!"); 
+            } 
+            
+        } 
+
+    </script>
+    </head> 
+<body> 
+<h1>XTREME ILLUSION</h1>  
+    <div class="reward-box">    <!--div aik khali box ki tarah hoti ha aur ye jo class likha wa ha us box ko aik pehchaan dene ke liye use ki wi ha-->
+    <h3>PRIVATE ACCESS</h3>     
+        <p>Enter email for 30% off your first order.</p> 
+        <input type="text" id="my_email" class="email-input" placeholder="Enter Email"> 
+        <br> 
+        <button class="gold-btn" onclick="get_my_reward()">REDEEM GIFT</button> <!--ye get_my_reward() its a function used in js (script)-->
+        </div> 
+    <button class="gold-btn" onclick="location.href='explore.html'">EXPLORE SHOP</button>  <!--ye jo location.href likha wa ha it means k ye button explore.html k webpage par lekar jayga-->
+    <footer> 
+    <p>Naval Anchorage Commercial 2, Islamabad</p> <!-- ye aunty k shop details hain-->
+        <p>03212153758</p> 
+        <p>@xtreme_illusion9</p> 
+        </footer> 
+
+</body> 
+</html> 
